@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-02 14:10:05
+ * @LastEditTime: 2021-02-02 14:14:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/2021-02-02/某公司1-12月份.../index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            1: 222,
+            2: 124,
+            5: 888,
+            11: 0
+        }
+
+        function func(obj) {
+            const res = [];
+            for (let i = 1; i < 12; i++) {
+                if (obj[i] !== undefined) {
+                    res.push(obj[i])
+                } else {
+                    res.push(null)
+                }
+            }
+
+            return res
+        }
+
+        console.log(func(obj));
+    </script>
+</body>
+</html>
