@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-02 10:14:21
+ * @LastEditTime: 2021-02-02 10:23:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/2021-02-02异步笔试题/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function async1() {
+            console.log('async1 start');
+            await async2();
+            console.log('async1 end');
+        }
+
+        async function async2() {
+            console.log('async2');
+        }
+
+        console.log('scripts start');
+
+        setTimeout(() => {
+            console.log('setTimeout')
+        }, 0);
+
+        async1();
+
+        new Promise((resolve, reject) => {
+            console.log('promise1');
+            resolve();
+        }).then(() => {
+            console.log('promise2');
+        })
+        console.log('script end');
+    </script>
+</body>
+</html>
