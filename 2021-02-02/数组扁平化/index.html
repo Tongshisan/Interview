@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-02 13:50:35
+ * @LastEditTime: 2021-02-02 13:57:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/2021-02-02/数组扁平化/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组扁平化</title>
+</head>
+<body>
+    <script>
+        const arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+
+        function flat(arr) {
+            const res = [];
+            function func(arr) {
+                for (let item of arr) {
+                    if (Array.isArray(item)) {
+                        func(item);
+                    } else {
+                        res.push(item);
+                    }
+                }
+            }
+            func(arr);
+            // 返回扁平化的数组
+            // return res;
+            // 返回扁平化, 去重, 升序数组
+            return [...new Set(res)].sort((a, b) => a - b);
+        }
+
+        console.log(flat(arr));
+    </script>
+</body>
+</html>
