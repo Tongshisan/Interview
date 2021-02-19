@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-18 17:09:29
+ * @LastEditTime: 2021-02-18 17:22:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit!
+ * @FilePath: /Interview/计算两个数组交集/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareArr(arr1, arr2) {
+            let minArr = [];
+            let maxArr = [];
+            if (arr1.length > arr2.length) {
+                minArr = arr2;
+                maxArr = arr1;
+            } else {
+                minArr = arr1;
+                maxArr = arr2;
+            }
+            const res = [];
+            for (let i = 0, len = minArr.length; i < len; i++) {
+                if (maxArr.includes(minArr[i])) {
+                    res.push(minArr[i]);
+                }
+            }
+
+            return res;
+        }
+
+        
+
+        // 第二种
+        function func(arr1, arr2) {
+            const res = arr1.filter((item) => {
+                return arr2.includes(item);
+            })
+            return res;
+        }
+
+        const arr1 = [1, 2, 2, 3];
+        const arr2 = [2, 2];
+        console.log(compareArr(arr1, arr2));
+        console.log(func(arr1, arr2));
+    </script>
+</body>
+</html>

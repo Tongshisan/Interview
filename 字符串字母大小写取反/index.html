@@ -1,0 +1,29 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-18 17:33:08
+ * @LastEditTime: 2021-02-18 17:39:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/字符串字母大小写取反/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function processString(str) {
+            let res = '';
+            for (let i = 0, len = str.length; i < len; i++) {
+                res += str[i] === str[i].toLowerCase() ? str[i].toUpperCase() : str[i].toLowerCase();
+            }
+            return res;
+        }
+        const str1 = 'aBcdeFG';
+        console.log(processString(str1));
+    </script>
+</body>
+</html>

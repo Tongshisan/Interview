@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-18 18:56:36
+ * @LastEditTime: 2021-02-18 19:02:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/将数组中的0移动到数组末尾/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * @description: 给定一个数组 nums, 将数组中的 0 移到末尾, 在原数组上改
+         * @param {*} nums numbers[]
+         * @return {*}
+         */        
+        function func(nums) {
+            for (let i = 0, len = nums.length; i < len;) {
+                if (nums[i] === 0) {
+                    nums.splice(i, 1);
+                    nums.push(0);
+                    len--;
+                } else {
+                    i++;
+                }
+            }
+            return nums;
+        }
+
+        const arr = [0, 1, 0, 3, 12];
+        const arr1 = [0, 0, 0, 3, 4, 5, 0]
+        console.log(func(arr));
+        console.log(func(arr1));
+    </script>
+</body>
+</html>

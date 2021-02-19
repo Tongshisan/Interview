@@ -1,0 +1,31 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-18 19:20:09
+ * @LastEditTime: 2021-02-18 19:23:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/改变对象的属性/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function changeObjProp(obj) {
+            console.log(obj)
+            obj.name = '张三';
+            obj = new Object();
+            console.log(obj)
+            obj.name = '李四';
+        }
+        let obj = new Object();
+        obj.age = 18
+        changeObjProp(obj);
+        console.log(obj)
+    </script>
+</body>
+</html>
