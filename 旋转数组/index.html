@@ -1,0 +1,32 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-19 13:06:21
+ * @LastEditTime: 2021-02-19 13:11:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/旋转数组/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function spinArray(arr, k) {
+            const len = arr.length;
+            const index = len - k;
+            return [...arr.slice(-k), ...arr.slice(0, index)]
+        }
+
+        const arr = [1, 2, 3, 4, 5, 5, 7];
+        let k = 3;
+        const arr2 = [-1, -100, 3, 99];
+        let k2 = 2;
+        console.log(spinArray(arr, k));
+        console.log(spinArray(arr2, k2))
+    </script>
+</body>
+</html>
