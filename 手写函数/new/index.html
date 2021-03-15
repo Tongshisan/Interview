@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-15 14:04:17
- * @LastEditTime: 2021-03-15 14:09:49
+ * @LastEditTime: 2021-03-15 14:13:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Interview/手写函数/new/index.html
@@ -31,6 +31,12 @@
                 return res;
             }
             return obj;
+        }
+
+        function __new(fn, ...args) {
+            const obj = Object.create(fn.prototype);
+            const res = fn.apply(obj, args);
+            return res instanceof Object ? res : obj;
         }
     </script>
 </body>
