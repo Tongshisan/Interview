@@ -1,0 +1,37 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-15 14:04:17
+ * @LastEditTime: 2021-03-15 14:09:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/手写函数/new/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function _new() {
+            // 1.创建一个新的对象
+            const obj = {};
+            const [construct, ...args] = [...arguments];
+
+            // 2.新对象的隐式原型指向构造函数的显示原型
+            obj.__proto = construct.prototype;
+            
+            // 3.这个新对象会绑定到函数调用的 this
+            const res = construct.apply(obj, args);
+
+            // 如果函数返回一个对象, 那么返回这个返回的对象, 否则返回新创建的对象
+            if (res && (typeof res === 'object' || typeof res === 'function')) {
+                return res;
+            }
+            return obj;
+        }
+    </script>
+</body>
+</html>
