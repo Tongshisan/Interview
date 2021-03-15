@@ -29,8 +29,10 @@
         Foo.a = function() {
             console.log(4)
         }
+        // 预计: 4
         Foo.a();
         let obj = new Foo();
+        // 预计: 3
         obj.a();
         Foo.a();
     </script>
