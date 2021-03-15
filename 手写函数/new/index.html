@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-03-15 14:04:17
- * @LastEditTime: 2021-03-15 14:13:29
+ * @LastEditTime: 2021-03-15 14:15:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Interview/手写函数/new/index.html
@@ -38,6 +38,8 @@
             const res = fn.apply(obj, args);
             return res instanceof Object ? res : obj;
         }
+
+        // Object.create() 方法创建一个新对象, 使用现有的对象来提供新创建对象的 __proto__
     </script>
 </body>
 </html>
