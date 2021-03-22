@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-02-19 10:30:20
- * @LastEditTime: 2021-02-19 10:32:16
+ * @LastEditTime: 2021-03-22 11:14:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Interview/obj.push/index.html
@@ -15,6 +15,10 @@
 </head>
 <body>
     <script>
+        // push 方法具有通用性。该方法和 call() 或 apply() 一起使用时，可应用在类似数组的对象上
+        // push 方法根据 length 属性来决定从哪里开始插入给定的值
+        // 如果 length 不能被转成一个数值，则插入的元素索引为 0，包括 length 不存在时
+        // 当 length 不存在时，将会创建它。
         const obj = {
             '2': 3,
             '3': 4,
@@ -24,9 +28,11 @@
         }
         console.log(obj)
         obj.push(1);
+        // 因为 length 是 2, 所以会在索引 2 出追加元素
+        // 如果此时 length 是 4, 那么 {2: '3', 3: '4', 4: '1'}
         console.log(obj)
-        obj.push(2)
-        console.log(obj)
+        // obj.push(2)
+        // console.log(obj)
     </script>
 </body>
 </html>
