@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-15 10:38:30
- * @LastEditTime: 2021-03-15 10:45:38
+ * @LastEditTime: 2021-03-17 17:21:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /Interview/手写函数/Promise/index.js
@@ -12,6 +12,8 @@ class MyPromise {
         this.status = 'PENDING';
         this.resolvedCallbacks = [];
         this.rejectedCallbacks = [];
+
+        fn(this.resolve, this.reject);
     }
 
     resolve = (value) => {
