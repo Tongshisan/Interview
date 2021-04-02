@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-23 15:59:31
+ * @LastEditTime: 2021-03-23 16:05:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/手写函数/深拷贝/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function deepClone(obj) {
+            if (obj instanceof RegExp) return new RegExp(obj);
+            if (obj instanceof Date) return new Date(obj);
+            if (obj === null || typeof obj !== 'object') return obj;
+            
+            const cloneObj = Array.isArray(obj) ? [] : {};
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                cloneObj[key] = deepClone(obj[key]);
+                }
+            }
+            
+            return cloneObj;
+        }
+
+        const obj = {
+            name: 'lizhi'
+        }
+
+        const cloneObj = deepClone(obj);
+        cloneObj.name = 'test';
+        console.log(obj)
+        console.log(cloneObj)
+    </script>
+</body>
+</html>

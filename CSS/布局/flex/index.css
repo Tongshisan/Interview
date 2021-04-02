@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+}
+main div {
+    height: 400px;
+}
+.left {
+    flex-shrink: 0;
+    width: 200px;
+    background-color: red;
+}
+
+.middle {
+    width: 100%;
+    flex: 1;
+    min-width: 500px;
+    background-color: #000;
+}
+
+.right {
+    flex-shrink: 0;
+    width: 300px;
+    background-color: green;
+}
