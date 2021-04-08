@@ -1,0 +1,29 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-07 16:03:11
+ * @LastEditTime: 2021-04-07 16:32:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/2021-04/2021-04-07/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = function(str) {
+            this.str = str;
+            console.log(this);
+        }
+        a.prototype.getA = function() {
+            console.log(this)
+            return this.str;
+        }
+        a.getA()
+    </script>
+</body>
+</html>
