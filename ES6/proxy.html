@@ -1,0 +1,41 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-10 17:06:59
+ * @LastEditTime: 2021-04-10 17:27:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/ES6/proxy.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = new Proxy({}, {
+            get: (target, propsKey, receiver) => {
+                console.log(target)
+                console.log(propsKey)
+                console.log(receiver)
+                return Reflect.get(target, propsKey, receiver)
+            },
+            set: (target, propsKey, value, receiver) => {
+                console.log('set')
+                console.log(target)
+                console.log(propsKey)
+                console.log(value)
+                console.log(receiver)
+                return Reflect.set(target, propsKey, value, receiver)
+            }
+        });
+
+        obj.a = 1;
+        obj.a;
+    </script>
+
+
+</body>
+</html>

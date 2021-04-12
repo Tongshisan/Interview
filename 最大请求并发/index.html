@@ -1,0 +1,44 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-09 11:30:49
+ * @LastEditTime: 2021-04-10 17:26:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /Interview/最大请求并发/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sendRequest = (urls = [], max = 3, cb) => {
+            let finished = 0;
+            const total = urls.length;
+
+            const handle = () => {
+                if (urls.length) {
+                    const url = urls.shift();
+                    fetch(url).then(() => {
+                        finished++;
+                        handle();
+                    }).catch((e) => {
+                        throw Error(e);
+                    })
+                }
+
+                if (finished >= total) {
+                    cb();
+                }
+            }
+
+            for (let i = 0; i < max; i++) {
+                handle();
+            }
+        }
+    </script>
+</body>
+</html>
