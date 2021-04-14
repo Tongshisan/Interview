@@ -1,0 +1,40 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-04-12 17:28:44
+ * @LastEditTime: 2021-04-12 17:47:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /lizhi/Interview/2021-04-12/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 请实现一个 protectPhone 函数，可以替换字符串中手机号的中间四位为 ****:
+        // protectPhone('家长的手机号是: 18512341234, 请注意保密');
+        // '家长的手机号是: 185****1234, 请注意保密'
+        function protectPhone(string) {
+            const regexp = /\d{11}/;
+            const phone = regexp.exec(string)[0];
+            // const str = phone.slice(3, 7);
+            const str = '';
+            for (let i = 0, l = phone.length; i < l; i++) {
+                if (i >= 3 && i <7) {
+                    str += '*';
+                } else {
+                    str += phone[i];
+                }
+            }
+            const myReg = new RegExp(`${phone}`);
+            return string.replace(myReg, str);
+            
+        }
+        console.log(protectPhone('家长的手机号是: 18512341234, 请注意保密'))
+    </script>
+</body>
+</html>

@@ -65,7 +65,7 @@ const fs = require('fs');
 Es6 引入的模块化, 支持 `import` 来引入另一个 js
 
 ```js
-import Index from './Index
+import Index from './Index'
 ```
 
 
